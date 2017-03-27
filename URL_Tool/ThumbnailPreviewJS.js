@@ -1,5 +1,6 @@
-$(document).ready(function() {
-  $.get('https://www.youtube.com/results?search_query=making+link+thumbnail', function (url) {
-    $('.PreviewTitle').html("Hello");
-  });
+$.ajax({
+      url: "http://textance.herokuapp.com/title/www.bbc.co.uk",
+      complete: function(data) {
+        alert(data.responseText);
+      }
 });
