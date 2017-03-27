@@ -1,6 +1,11 @@
-$.ajax({
-      url: "http://textance.herokuapp.com/title/www.bbc.co.uk",
-      complete: function(data) {
-        alert(data.responseText);
-      }
-});
+function foo(response) {
+  var meta = response.meta;
+  var data = response.data;
+  console.log(meta);
+  console.log(data);
+}
+
+var script = document.createElement('script');
+script.src = 'https://api.github.com?callback=foo';
+
+document.getElementsByTagName('head')[0].appendChild(script);
