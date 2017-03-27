@@ -5,7 +5,7 @@ function DetectKeys() {
 
   if(textKey == 32 || textKey == 13) {
     $('#LogId').html("Detect!");
-    showVideo();
+    showInfo();
   }
 }
 
@@ -42,7 +42,7 @@ function shwoingWebPreview() {
   });
 }
 
-function showVideo() {
+function showInfo() {
     var text = document.getElementById("MessageBox").value;
     
     if(ValidURL(text)) {
