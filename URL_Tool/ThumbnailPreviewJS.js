@@ -6,6 +6,6 @@ function foo(response) {
 }
 
 var script = document.createElement('script');
-script.src = 'https://api.github.com?callback=foo';
+script.src = 'http://stackoverflow.com/questions/35911262/fetching-metadata-from-url';
 
 document.getElementsByTagName('head')[0].appendChild(script);
