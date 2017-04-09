@@ -3,9 +3,9 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
 
   $.get(url, function(data) {
     var html = $(data).find('html');
-    $('#PreviewTitle').html(html.find('meta[name=keywords]').attr('content') || 'no keywords found');
+    $('#PreviewTitle').html(html.find('meta[name=twitter:title]').attr('content') || 'no keywords found');
 
     console.log(html);
-    console.log(html.find('meta[name=keywords]').attr('content') || 'no keywords found');
+    console.log(html.find('meta[name=twitter:title]').attr('content') || 'no keywords found');
   });
 console.log('-------------------');
