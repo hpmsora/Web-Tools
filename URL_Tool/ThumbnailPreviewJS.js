@@ -1,4 +1,4 @@
-var query = 'select * from html where url="' + $('input').val() + '" and xpath="*"';
+var query = 'select * from html where url="' + 'http://www.naver.com/' + '" and xpath="*"';
 var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query);
 
   $.get(url, function(data) {
