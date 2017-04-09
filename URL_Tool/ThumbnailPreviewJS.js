@@ -1,7 +1,7 @@
-var scrape = require('html-metadata');
- 
-var url = "http://blog.woorank.com/2013/04/dublin-core-metadata-for-seo-and-usability/";
- 
-scrape(url).then(function(metadata){
-    console.log(metadata);
-});
+var query = 'select * from html where url="' + $('input').val() + '" and xpath="*"';
+var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query);
+
+  $.get(url, function(data) {
+    var html = $(data).find('html');
+    $('#PreviewTitle').html(html.find('meta[name=keywords]').attr('content') || 'no keywords found');
+  });
