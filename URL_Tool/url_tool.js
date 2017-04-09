@@ -37,13 +37,9 @@ function showingVideo(type, id) {
 }
 
 function shwoingWebPreview() {
-  $("#ResultBox").load("{URLHERE} meta[name='Author']", function(response, status, xhr){
-    var $meta = $("meta", this);
-
-    $(this).text($meta.attr("content"));
-
-    $meta.remove();
-});
+  $.get("ThumbnailPreview.html", function(data) {
+    $("#ResultBox").append(data);
+  });
 }
 
 function showInfo() {

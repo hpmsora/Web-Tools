@@ -1,11 +1,7 @@
-function foo(response) {
-  var meta = response.meta;
-  var data = response.data;
-  console.log(meta);
-  console.log(data);
-}
+$("#PreviewTitle").load("{http://www.naver.com/} meta[name='Author']", function(response, status, xhr){
+    var $meta = $("meta", this);
 
-var script = document.createElement('script');
-script.src = 'http://stackoverflow.com/questions/35911262/fetching-metadata-from-url';
+    $(this).text($meta.attr("content"));
 
-document.getElementsByTagName('head')[0].appendChild(script);
+    $meta.remove();
+});
