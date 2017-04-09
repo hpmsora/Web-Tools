@@ -5,6 +5,7 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
     var html = $(data).find('html');
     $('#PreviewTitle').html(html.find('meta[name=keywords]').attr('content') || 'no keywords found');
 
+    console.log(html);
     console.log(html.find('meta[name=keywords]').attr('content') || 'no keywords found');
   });
 console.log('-------------------');
