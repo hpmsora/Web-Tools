@@ -7,6 +7,6 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
     var html = $(data).find('html');
     console.log(html.find("meta[name='twitter:description']").attr('content'));
 
-    $('#PreviewTitle').html(html.find("meta[name='twitter:description']").attr('content') || 'no title found');
+    $('.PreviewTitle').html(html.find("meta[name='twitter:description']").attr('content') || 'no title found');
   });
 console.log('-------------------');
