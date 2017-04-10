@@ -26,7 +26,7 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
         var imageURL = html.find("meta[property='og:image']").attr('content') || null;
         console.log(imageURL);
         if(imageURL != null) {
-            $('.PreviewImage').html("<img src='" + imageURL + "'>");
+            $('.PreviewImage').html("<img src='" + imageURL + "' style='width:300px;'>");
         } else {
             $('.PreviewImage').html('Image');
         }
