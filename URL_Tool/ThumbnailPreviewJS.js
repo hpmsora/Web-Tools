@@ -34,7 +34,6 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
         $('.PreviewMainURL').html(extractRootDomain(url));
     }
   });
-console.log('-------------------');
 
 function extractHostname(url) {
     var hostname;
