@@ -35,7 +35,28 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
 
         var description = html.find("meta[name='description']").attr('content') || html.find("meta[name='twitter:description']").attr('content') || html.find("meta[property='og:description']").attr('content') || 'No Title';
         $('.PreviewDescription').html(description);
-        $('.PreviewMainURL').html(html.find("meta[name='twitter:domain']").attr('content') || '');
+        $('.PreviewMainURL').html(extractRootDomain(url));
     }
   });
 console.log('-------------------');
+
+function extractHostname(url) {
+    var hostname;
+    if (url.indexOf("://") > -1) {
+        hostname = url.split('/')[2];
+    } else {
+        hostname = url.split('/')[0];
+    }
+    hostname = hostname.split(':')[0];
+
+    return hostname;
+}
+function extractRootDomain(url) {
+    var domain = extractHostname(url),
+        splitArr = domain.split('.'),
+        arrLen = splitArr.length;
+    if (arrLen > 2) {
+        domain = splitArr[arrLen - 2] + '.' + splitArr[arrLen - 1];
+    }
+    return domain;
+}
