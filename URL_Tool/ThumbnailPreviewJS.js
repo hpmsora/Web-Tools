@@ -12,7 +12,7 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
     var regExpPinterest = /https?:\/\/(?:www\.)?pinterest.com\/(?:pin\/).*/;
     var matchPinterest = url.match(regExpPinterest);
 
-    console.log(matchPinterest)
+    console.log("--" + matchPinterest);
 
     $('.PreviewImage').html(title);
     $('.PreviewTitle').html(html.find("meta[name='twitter:title']").attr('content') || '');
