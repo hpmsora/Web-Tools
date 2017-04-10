@@ -6,7 +6,7 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
 
     console.log(html);
 
-    var title = html.title || null;
+    var title = html.find("title").text() || null;
     var url = document.getElementById("MessageBox").value;
 
     var regExpPinterest = /https?:\/\/(?:www\.)?pinterest.com\/(?:pin\/)([^#\&\?]*).*/;
@@ -30,12 +30,12 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
             title = html.find("meta[name='twitter:title']").attr('content') || null;
             if(title == null) {
                 console.log("Title 2 : " + title);
-                title = html.find("meta[name='og:title']").attr('content') || 'No Title';
+                title = html.find("meta[property='og:title']").attr('content') || 'No Title';
             }
         }
         console.log("Title: " + title);
         $('.PreviewImage').html('Image');
-        $('.PreviewTitle').html();
+        $('.PreviewTitle').html(title);
         $('.PreviewDescription').html(html.find("meta[name='twitter:description']").attr('content') || '');
         $('.PreviewMainURL').html(html.find("meta[name='twitter:domain']").attr('content') || '');
     }
