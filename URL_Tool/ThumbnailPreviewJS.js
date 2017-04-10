@@ -4,7 +4,7 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
   $.get(url, function(data) {
     var html = $(data).find('html');
 
-    var title = html.find("meta[property='og:image']").attr('itemprop') || '';
+    var title = html.find("title").innterHTML || '';
     var url = document.getElementById("MessageBox").value;
 
     var regExpPinterest = /https?:\/\/(?:www\.)?pinterest.com\/(?:pin\/)([^#\&\?]*).*/;
