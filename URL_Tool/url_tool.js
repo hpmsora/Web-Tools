@@ -48,7 +48,7 @@ function showInfo() {
     if(ValidURL(text)) {
       //Clean the result box
       console.log("URL")
-      $("#ResultBoxInner").empty();
+      $("#ResultBox").empty();
 
       //YouTube & Veomo
       var VideoId = getVideoId(text);
