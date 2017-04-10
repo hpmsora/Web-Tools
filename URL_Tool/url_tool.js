@@ -46,9 +46,11 @@ function showInfo() {
     var text = document.getElementById("MessageBox").value;
     
     if(ValidURL(text)) {
+      
       //Clean the result box
       console.log("URL")
       $("#ResultBox").empty();
+      $("#ResultBoxMedia").empty();
 
       //YouTube & Veomo
       var VideoId = getVideoId(text);
