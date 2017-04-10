@@ -4,16 +4,15 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
   $.get(url, function(data) {
     var html = $(data).find('html');
 
-    console.log(html);
-
     var title = html.find("title").text() || null;
-    console.log(title);
     if(title == null) {
         title = $(html).attr('title');
     }
     console.log(title);
 
     var url = document.getElementById("MessageBox").value;
+
+    console.log(url.host);
 
     var regExpPinterest = /https?:\/\/(?:www\.)?pinterest.com\/(?:pin\/)([^#\&\?]*).*/;
     var matchPinterest = url.match(regExpPinterest);
@@ -26,21 +25,16 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
         preview.setAttribute('data-pin-do',"embedPin");
         preview.setAttribute('href',matchPinterest[0]);
         PreviewWrap.appendChild(preview);
-        //$('#PreviewWrapID').html('<a data-pin-do="embedPin" href="' + matchPinterest[0] + '"></a>');
     } else {
         console.log("Not Pinterest");
-        if(title == null) {
-            console.log("Title 1 : " + title);
-            title = html.find("meta[name='twitter:title']").attr('content') || null;
-            if(title == null) {
-                console.log("Title 2 : " + title);
-                title = html.find("meta[property='og:title']").attr('content') || 'No Title';
-            }
-        }
-        console.log("Title: " + title);
         $('.PreviewImage').html('Image');
+        if(title == null) {
+            title = html.find("meta[name='title']").attr('content') || html.find("meta[name='twitter:title']").attr('content') || html.find("meta[property='og:title']").attr('content') || 'No Title';
+        }
         $('.PreviewTitle').html(title);
-        $('.PreviewDescription').html(html.find("meta[name='twitter:description']").attr('content') || '');
+
+        var description = html.find("meta[name='description']").attr('content') || html.find("meta[name='twitter:description']").attr('content') || html.find("meta[property='og:description']").attr('content') || 'No Title';
+        $('.PreviewDescription').html(description);
         $('.PreviewMainURL').html(html.find("meta[name='twitter:domain']").attr('content') || '');
     }
   });
