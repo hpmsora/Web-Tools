@@ -9,7 +9,7 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
 
     var url = document.getElementById("MessageBox").value;
 
-    var regExpPinterest = /https?:\/\/(?:www\.)?pinterest.com\/(?:pin\/).*/;
+    var regExpPinterest = /https?:\/\/(?:www\.)?pinterest.com\/(?:pin\/)([^#\&\?]*).*/;
     var matchPinterest = url.match(regExpPinterest);
 
     console.log("--" + matchPinterest[0]);
