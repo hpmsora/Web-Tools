@@ -10,6 +10,8 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
     var regExpPinterest = /https?:\/\/(?:www\.)?pinterest.com\/(?:pin\/)([^#\&\?]*).*/;
     var matchPinterest = url.match(regExpPinterest);
 
+    console.log(title);
+
     if(matchPinterest) {
         $('#VideoId').html(matchPinterest[1]);
         $('#PreviewWrapID').html('<script async defer src="//assets.pinterest.com/js/pinit.js"></script>');
@@ -20,6 +22,7 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
         PreviewWrap.appendChild(preview);
         //$('#PreviewWrapID').html('<a data-pin-do="embedPin" href="' + matchPinterest[0] + '"></a>');
     } else {
+        console.log("Not Pinterest");
         $('.PreviewImage').html(title);
         $('.PreviewTitle').html(html.find("meta[name='twitter:title']").attr('content') || '');
         $('.PreviewDescription').html(html.find("meta[name='twitter:description']").attr('content') || '');
