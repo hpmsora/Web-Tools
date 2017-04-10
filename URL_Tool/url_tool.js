@@ -47,6 +47,7 @@ function showInfo() {
     
     if(ValidURL(text)) {
       //Clean the result box
+      console.log("URL")
       $("#ResultBoxInner").empty();
 
       //YouTube & Veomo
