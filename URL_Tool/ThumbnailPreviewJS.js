@@ -31,6 +31,7 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
                 title = html.find("meta[name='og:title']").attr('content') || 'No Title';
             }
         }
+        console.log("Title: " + title)
         $('.PreviewImage').html('Image');
         $('.PreviewTitle').html();
         $('.PreviewDescription').html(html.find("meta[name='twitter:description']").attr('content') || '');
