@@ -13,7 +13,12 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
     if(matchPinterest) {
         $('#VideoId').html(matchPinterest[1]);
         $('#PreviewWrapID').html('<script async defer src="//assets.pinterest.com/js/pinit.js"></script>');
-        $('#PreviewWrapID').html('<a data-pin-do="embedPin" href="' + matchPinterest[0] + '"></a>');
+        var PreviewWrap = document.getElementById("PreviewWrapID");
+        var preview = document.createElement('a');
+        preview.setAttribute('data-pin-do',"embedPin");
+        preview.setAttribute('href',matchPinterest[0]);
+        PreviewWrap.appendChild(preview);
+        //$('#PreviewWrapID').html('<a data-pin-do="embedPin" href="' + matchPinterest[0] + '"></a>');
     } else {
         $('.PreviewImage').html(title);
         $('.PreviewTitle').html(html.find("meta[name='twitter:title']").attr('content') || '');
