@@ -23,7 +23,7 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
         PreviewWrap.appendChild(preview);
     } else {
         console.log("Not Pinterest");
-        var imageURL = html.find("meta[property='og:image']").attr('content') || null;
+        var imageURL = html.find("meta[property='og:image']").attr('content') || html.find("link[type='image/x-icon']").attr('href') || null;
         console.log(imageURL);
         if(imageURL != null) {
             $('.PreviewImage').html("<img src='" + imageURL + "' style='width:300px;'>");
@@ -36,7 +36,7 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
         }
         $('.PreviewTitle').html(title);
 
-        var description = html.find("meta[name='description']").attr('content') || html.find("meta[name='twitter:description']").attr('content') || html.find("meta[property='og:description']").attr('content') || 'No Title';
+        var description = html.find("meta[name='description']").attr('content') || html.find("meta[name='twitter:description']").attr('content') || html.find("meta[property='og:description']").attr('content') || 'No Description';
         $('.PreviewDescription').html(description);
         $('.PreviewMainURL').html(extractRootDomain(url));
     }
