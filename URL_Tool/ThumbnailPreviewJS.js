@@ -26,12 +26,14 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
     } else {
         console.log("Not Pinterest");
         if(title == null) {
+            console.log("Title 1 : " + title);
             title = html.find("meta[name='twitter:title']").attr('content') || null;
             if(title == null) {
+                console.log("Title 2 : " + title);
                 title = html.find("meta[name='og:title']").attr('content') || 'No Title';
             }
         }
-        console.log("Title: " + title)
+        console.log("Title: " + title);
         $('.PreviewImage').html('Image');
         $('.PreviewTitle').html();
         $('.PreviewDescription').html(html.find("meta[name='twitter:description']").attr('content') || '');
