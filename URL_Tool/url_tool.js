@@ -31,7 +31,7 @@ function getVideoId(url) {
 
 function showingVideo(type, id) {
   if(type == "YouTube")
-    $('#ResultBoxInner').html('<iframe width="560" height="315" src="https://www.youtube.com/embed/' + id + '" frameborder="0" allowfullscreen></iframe>');
+    $('#ResultBoxMedia').html('<iframe width="560" height="315" src="https://www.youtube.com/embed/' + id + '" frameborder="0" allowfullscreen></iframe>');
   else if(type == "Vimeo")
     $('#ResultBoxInner').html('<iframe width="560" height="315" src="https://player.vimeo.com/video/' + id + '" frameborder="0" allowfullscreen></iframe>');
 }
