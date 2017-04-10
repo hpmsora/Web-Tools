@@ -23,7 +23,7 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
         PreviewWrap.appendChild(preview);
     } else {
         console.log("Not Pinterest");
-        var imageURL = html.find("meta[name='title']").attr('content') || null;
+        var imageURL = html.find("meta[property='og:image']").attr('content') || null;
         console.log(imageURL);
         if(imageURL != null) {
             $('.PreviewImage').html("<img src='" + imageURL + "'>");
