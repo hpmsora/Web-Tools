@@ -7,15 +7,16 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
     console.log(html);
 
     var title = html.find("title").text() || null;
+    console.log(title);
     if(title == null) {
         title = html.match(/<title[^>]*>([^<]+)<\/title>/);
     }
+    console.log(title);
+
     var url = document.getElementById("MessageBox").value;
 
     var regExpPinterest = /https?:\/\/(?:www\.)?pinterest.com\/(?:pin\/)([^#\&\?]*).*/;
     var matchPinterest = url.match(regExpPinterest);
-
-    console.log(title);
 
     if(matchPinterest) {
         $('#VideoId').html(matchPinterest[1]);
