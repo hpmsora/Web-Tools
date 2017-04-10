@@ -23,7 +23,13 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
         PreviewWrap.appendChild(preview);
     } else {
         console.log("Not Pinterest");
-        $('.PreviewImage').html('Image');
+        var imageURL = html.find("meta[name='title']").attr('content') || null;
+        if(imageURL != null) {
+            $('.PreviewImage').html("<img src='" + imageURL + "'>");
+        } else {
+            $('.PreviewImage').html('Image');
+        }
+        
         if(title == null) {
             title = html.find("meta[name='title']").attr('content') || html.find("meta[name='twitter:title']").attr('content') || html.find("meta[property='og:title']").attr('content') || 'No Title';
         }
