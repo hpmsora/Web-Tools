@@ -8,7 +8,7 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
 
     var title = html.find("title").text() || null;
     if(title == null) {
-        title = $(html).filter('title').text() || null;
+        title = html.match(/<title[^>]*>([^<]+)<\/title>/);
     }
     var url = document.getElementById("MessageBox").value;
 
