@@ -5,18 +5,20 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
     var html = $(data).find('html');
 
     var title = html.find("meta[property='og:image']").attr('itemprop') || '';
-    console.log(title);
-
     var url = document.getElementById("MessageBox").value;
 
     var regExpPinterest = /https?:\/\/(?:www\.)?pinterest.com\/(?:pin\/)([^#\&\?]*).*/;
     var matchPinterest = url.match(regExpPinterest);
 
-    console.log("--" + matchPinterest[1]);
-
-    $('.PreviewImage').html(title);
-    $('.PreviewTitle').html(html.find("meta[name='twitter:title']").attr('content') || '');
-    $('.PreviewDescription').html(html.find("meta[name='twitter:description']").attr('content') || '');
-    $('.PreviewMainURL').html(html.find("meta[name='twitter:domain']").attr('content') || '');
+    if(matchPinterest) {
+        $('#VideoId').html(matchPinterest[1]);
+        $('#ScriptBox').html('<script async defer src="//assets.pinterest.com/js/pinit.js"></script>');
+        $('#PreviewWrapID').html('<a data-pin-do="embedPin" href="' + matchPinterest[0] + '"></a>');
+    } else {
+        $('.PreviewImage').html(title);
+        $('.PreviewTitle').html(html.find("meta[name='twitter:title']").attr('content') || '');
+        $('.PreviewDescription').html(html.find("meta[name='twitter:description']").attr('content') || '');
+        $('.PreviewMainURL').html(html.find("meta[name='twitter:domain']").attr('content') || '');
+    }
   });
 console.log('-------------------');

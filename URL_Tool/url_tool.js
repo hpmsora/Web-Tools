@@ -20,8 +20,6 @@ function getVideoId(url) {
     var matchVimeo = url.match(regExpVimeo);
     var matchYouTube = url.match(regExpYouTube);
 
-    console.log(matchYouTube);
-
     if (matchYouTube && matchYouTube[2].length == 11) {
         return ["YouTube", matchYouTube[2]];
     } else if (matchVimeo) {
