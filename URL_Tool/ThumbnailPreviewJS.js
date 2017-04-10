@@ -9,7 +9,7 @@ var url = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(qu
     var title = html.find("title").text() || null;
     console.log(title);
     if(title == null) {
-        title = $(html).match(/<title[^>]*>([^<]+)<\/title>/);
+        title = $(html).attr('title');
     }
     console.log(title);
 
