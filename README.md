@@ -6,6 +6,6 @@ Tools
 ```javascript
 var docxJS = new DocxJS();
 ```
-From DocxJSDev
+  From DocxJSDev
 
 * E-mail Tool
