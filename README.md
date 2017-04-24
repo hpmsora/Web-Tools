@@ -2,10 +2,9 @@
 
 Tools
 * URL Tool
-* Microsoft Office Preview Tool
+* Microsoft Office Preview Tool<br /> DocxJS Provided by DocxJSDev
 ```javascript
 var docxJS = new DocxJS();
 ```
-  From DocxJSDev
 
 * E-mail Tool
