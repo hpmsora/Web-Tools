@@ -28,4 +28,12 @@ $(document).ready(function(){
       }
     );
   });
+
+  var $pdfFiles = $('#pdfFiles');
+
+  $pdfFiles.on('change', function(e) {
+
+    var files = e.target.files;
+    
+  });
 });
