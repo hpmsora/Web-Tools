@@ -4,7 +4,7 @@ $(document).ready(function(){
 
   $UploadedFile.on('change', function (e) {
 
-    var UploadedFile = e.target.UploadedFile;
+    var UploadedFile = e.target.files;
 
     console.log(UploadedFile.value);
   });
