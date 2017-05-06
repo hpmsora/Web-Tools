@@ -6,6 +6,6 @@ $(document).ready(function(){
 
     var UploadedFile = e.target.UploadedFile;
 
-    console.log(UploadedFile.mozFullPath);
+    console.log(UploadedFile.value);
   });
 })
