@@ -1,7 +1,4 @@
-var global = window
-var ndarray = require('ndarray')
-var savePixels = require('save-pixels')
-var concat = require('concat-stream')
+var PSD = require('psd');
 
 $(document).ready(function(){
 
