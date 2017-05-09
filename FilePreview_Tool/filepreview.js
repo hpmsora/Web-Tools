@@ -1,3 +1,9 @@
+var global = window
+var Parser = require('psd').Parser
+var ndarray = require('ndarray')
+var savePixels = require('save-pixels')
+var concat = require('concat-stream')
+
 $(document).ready(function(){
 
   var $UploadedFile = $('#UploadedFile');
