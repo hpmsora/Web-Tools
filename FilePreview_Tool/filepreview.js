@@ -1,5 +1,5 @@
 var global = window
-var Parser = require('psd').Parser
+var Parser = require('psd.js').Parser
 var ndarray = require('ndarray')
 var savePixels = require('save-pixels')
 var concat = require('concat-stream')
