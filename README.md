@@ -2,9 +2,11 @@
 
 Tools
 * **URL Tool**
-* **File Preview Tool**<br /> DocxJS Provided by DocxJSDev
-```javascript
-var docxJS = new DocxJS();
-```
-
+* **File Preview Tool**
+  * MS Office Words
+  * MS Office PowerPoint
+  * MS Office Excel
+  * Adobe PDF
+  * Adobe Photoshop
+  * 3D Model STL
 * **E-mail Tool**
