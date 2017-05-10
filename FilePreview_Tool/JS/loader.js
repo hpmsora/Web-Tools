@@ -1,7 +1,7 @@
 window.addEventListener("load", function () {
     "use strict";
     
-    var w = 800, h = 800;
+    var w = 500, h = 500;
     
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize(w, h);
