@@ -4,6 +4,12 @@
     <script rel="text/javascript" src="/Web-Tools/FilePreview_Tool/JS/jquery-3.1.1.js"></script>
     <script rel="text/javascript" src="/Web-Tools/FilePreview_Tool/JS/psd.js"></script>
     <script rel="text/javascript" src="/Web-Tools/FilePreview_Tool/JS/filepreview.js"></script>
+
+    <script rel="text/javascript" src="/Web-Tools/FilePreview_Tool/JS/three.min.js"></script>
+    <script rel="text/javascript" src="/Web-Tools/FilePreview_Tool/JS/TrackballControls.js"></script>
+    <script rel="text/javascript" src="/Web-Tools/FilePreview_Tool/JS/loader.js"></script>
+    <script rel="text/javascript" src="/Web-Tools/FilePreview_Tool/JS/stl.js"></script>
+
     <link rel="stylesheet" type="text/css" href="testStyle.css">
   </head>
   <body>
@@ -20,6 +26,9 @@
     <iframe class="testIfram_Class" src="https://hpmsora.github.io/Web-Tools/FilePreview_Tool/Assets/samplePDF.pdf"></iframe><br /><br />
     <span>Photoshop Browser</span><br />
     <div class="testIfram_Class" id="testPSD"></div><br /><br />
-
+    <div>
+    select stl file: <input type="file" id="file" /> or drop stl file
+    </div>
+    <div id="view"></div>
   </body>
 </html>
