@@ -2,6 +2,9 @@
 
 Tools
 * **URL Tool**
+  * YouTube
+  * Vimeo
+  * Pinterest
 * **File Preview Tool**
   * MS Office Words
   * MS Office PowerPoint
